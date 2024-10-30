@@ -1,0 +1,28 @@
+function load() {
+	//console.log('hello');
+	//console.log(buildMelody());
+	//console.log(expressABC([]));
+	//let melody = expressABC(buildMelody());
+	//console.log(melody);
+	//let melody = expressABC(buildMelody());
+	let line = buildMelody();
+	line = addCadence(line);
+	//console.log(expressABC(line));
+	let abc = '';
+	abc += '%%MIDI program 49' + "\n";
+	abc += 'V: 1 clef=treble' + "\n";
+	abc += 'M: none' + "\n";	
+	abc += 'L:1' + "\n";
+	abc += 'K:C' + "\n";
+	abc += expressABC(line) + "\n";
+	let domain = 'https://editor.drawthedots.com/?t=';
+	let url = domain + encodeURIComponent(abc);
+	ABCJS.renderAbc("paper", abc);
+	divABC.innerHTML = '';
+	divABC.insertAdjacentHTML("beforeend", abc);
+	drawthedots.href = url;
+};
+const buildButton = document.getElementById('build');
+const divABC = document.getElementById('abc');
+const drawthedots = document.getElementById('drawthedots');
+buildButton.addEventListener('click', load);

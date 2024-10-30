@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tendency Tones Melody</title>
+<link rel="stylesheet" type="text/css" href="main.css" media="screen" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="abcjs-basic.js" type="text/javascript"></script>
+<script src="melody.TendencyTones.js" type="text/javascript"></script>
+</head>
+<body>
+	<h1>Tendency Tones Melody</h1>
+	<div class="description">
+		<p>
+		Tendency Tones Melody is javascript application to generate a random melody which 
+		implements melodic <i>tendency tone</i> rules as given by Kent Kennan in his 
+		book &ldquo;<a href="https://archive.org/details/KennanKentCounterpoint4thEd" target="_blank">Counterpoint</a>&rdquo;. 
+		</p>
+		<ul>
+			<li>Scale degree <span class="music_symbols">^7</span> tends to resolve to <span class="music_symbols">^1</span></li>
+			<li><span class="music_symbols">^4</span> tends to resolve to <span class="music_symbols">^3</span></li>
+			<li><span class="music_symbols">^6</span> tends to resolve to <span class="music_symbols">^5</span></li>
+			<li>To a lesser extent <span class="music_symbols">^2</span> tends to resolve to <span class="music_symbols">^1</span></li>
+			<li>Any tendency tone - <span class="music_symbols">^7</span>, <span class="music_symbols">^4</span>, <span class="music_symbols">^6</span>, or <span class="music_symbols">^2</span> - may move to another tendency tone, resolution follows the last tendency tone of series of tendency tones</li>
+		</ul>
+		<p>
+		The follow exceptions are possible for moving contrary to a tendency tone's normal resolution.
+		</p>
+		<ul>
+			<li><span class="music_symbols">^7</span> when preceeded by <span class="music_symbols">^1</span> may continue to <span class="music_symbols">^6</span> as (<span class="music_symbols">^1 ^7 ^6</span>)</li>
+			<li><span class="music_symbols">^4</span> when preceeded by <span class="music_symbols">^3</span> may continue to <span class="music_symbols">^5</span> as (<span class="music_symbols">^3 ^4 ^5</span>)</li>
+			<li><span class="music_symbols">^6</span> when preceeded by <span class="music_symbols">^5</span> may continue to <span class="music_symbols">^7</span> as (<span class="music_symbols">^5 ^6 ^7</span>)</li>
+			<li><span class="music_symbols">^2</span> when preceeded by <span class="music_symbols">^1</span> may continue to <span class="music_symbols">^3</span> as (<span class="music_symbols">^1 ^2 ^3</span>)</li>
+		</ul>
+		<p>
+		I add to Keenan's tendency tone rule these simple points:
+		</p>
+		<ul>
+			<li>Limit the range of the melody to a <i>perfect eleventh</i> (<span class="music_symbols">P11</span>), specifically <span class="music_symbols">B3</span> to <span class="music_symbols">E5</span></li>
+			<li>Each melody tone should not repeat either of the two previous tones</li>
+			<li>No more than two consecutive tendency tones</li>
+			<li>Conclude the melody line with either a <i>half cadence</i> or <i>authentic cadence</i></li>
+		</ul>
+	</div>
+	<div class="description">
+		<p>
+		Harmonically some scale degree have one clear chord association while other can be associated with multiple chords and therefore are harmonically ambiguous. 
+		</p>
+		<ul>
+			<li>Scale degrees <span class="music_symbols">^1</span> and <span class="music_symbols">^3</span> are clearly assoicated with <span class="music_symbols">I</span> while scale degree <span class="music_symbols">^7</span> is clearly associated with <span class="music_symbols">V</span>. </li>
+			<li>Scale degree <span class="music_symbols">^6</span> is usually assoicated with <span class="music_symbols">IV</span>, however in a line like <span class="music_symbols">^7 ^6 ^5</span> degree <span class="music_symbols">^6</span> seems to be part of a <i>retrogression</i> (<span class="music_symbols">V IV V</span>.) In such cases <span class="music_symbols">^6</span> can be harmonized as <span class="music_symbols">V/V</span>.</li>
+			<li>Scale degree <span class="music_symbols">^5</span> can be harmonized with either <span class="music_symbols">I</span> or <span class="music_symbols">V</span>.</li>
+			<li>Scale degrees <span class="music_symbols">^2</span> and <span class="music_symbols">^4</span> can be harmonized with either <span class="music_symbols">IV</span> or <span class="music_symbols">V</span>. Their tendency tone resolution alone does not determine the 
+			harmonization (ex. <span class="music_symbols">^4</span> to <span class="music_symbols">^3</span> can be either <span class="music_symbols">IV I</span> or <span class="music_symbols">V7 I</span>.)</li>
+			<li>In the case of <span class="music_symbols">^4</span> the melodic direction has bearing. Degree <span class="music_symbols">^4</span> ascending to <span class="music_symbols">^5</span> with harmonization <span class="music_symbols">V7 I</span> would be an irregular resolution.</li>
+			<li>A possibility for <span class="music_symbols">^4</span> ascending to <span class="music_symbols">^5</span> is a <i>voice exchange</i> as <span class="music_symbols">V7</span> to another voicing of <span class="music_symbols">V7</span>.</li>
+			<li>In any event if a harmonization presents a retrogression (ex. <span class="music_symbols">^7</span> to <span class="music_symbols">^2</span> harmonized with <span class="music_symbols">V IV</span>) an alternative is to harmonize the second chord as another <span class="music_symbols">V</span> or possibly <span class="music_symbols">V/V</span>.</li>
+		</ul>
+		<p>
+		The final melody is presented in unmetered whole notes. It could be realized in various meters, rhythms, and with ornamentation. 
+		One consideration when choosing rhythms is the melodic tendency to <i>leap to weak beats</i>. This works well with leaps that are &ldquo;filled&rdquo; 
+		by a step. Leaps among tonic chord tones, or other clear chord groups, or leaps between tendency tones could be played with even rhythm values.
+		</p>
+		<p>
+		Check out my <a href="https://music.stackexchange.com/users/23919/michael-curtis" target=”_blank”>Music Theory &amp; Practice</a> StackExchange profile.
+		</p>
+	</div>
+	<div class="output">
+		<fieldset>
+			<legend>Melody</legend>
+			<div class="build">
+				<button id="build">Build Melody</button>
+			</div>
+			<div id="paper"></div>
+			<div id="abc"></div>
+			<p>
+			You can hear and print the music online at <a href="https://editor.drawthedots.com/" id="drawthedots" target="_blank">DrawTheDots</a>
+			</p>
+			<p>
+			The music on this page is rendered in staff notation using <a href="https://paulrosen.github.io/abcjs/" target="_blank">ABCjs</a> 
+			created by <a href="https://github.com/paulrosen" target="_blank">Paul Rosen</a> and <a href="https://github.com/tirno" target="_blank">Gregory Dyke</a>.
+			</p>
+		</fieldset>
+	</div>
+	<script src="./app.js" type="text/javascript"></script>
+</body>
+</html>
